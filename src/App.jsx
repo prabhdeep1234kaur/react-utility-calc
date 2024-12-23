@@ -15,9 +15,9 @@ function App() {
     <ContextProvider>
       <Header />
       <Routes>
-        <Route path="/gh-pages-url" element={<Home />} />
-        <Route path="/gh-pages-url/utility-cal/" element={<UtilityCalc />} />
-        <Route path="/gh-pages-url/utility-view/" element={<UtilityView />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/utility-cal/" element={<UtilityCalc />} />
+        <Route path="/utility-view/" element={<UtilityView />} />
       </Routes>
       
       <Footer />
