@@ -18,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/utility-cal/" element={<UtilityCalc />} />
         <Route path="/utility-view/" element={<UtilityView />} />
+        <Route path="*" element={<p>Page not found</p>} />
       </Routes>
       
       <Footer />
