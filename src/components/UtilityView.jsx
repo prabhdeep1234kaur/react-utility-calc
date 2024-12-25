@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 
 const UtilityView = () => {
     const { 
+        handleMonthName,
         month,
         tenantCount,
         totalHydro,
@@ -53,7 +54,7 @@ const UtilityView = () => {
                             <b>Water Per Person : </b>${waterPerPerson}
                         </p>
                     </div>
-                    <div className="total"><p><b>Total Utilites for {month} for {tenantCount} people : </b>${totalUitlity}</p></div>
+                    <div className="total"><p><b>Total Utilites for {handleMonthName(month)} for {tenantCount} people : </b>${totalUitlity}</p></div>
                     <div className="perperson"><p><b>Total Utilities Per Person : </b>${totalUitlityPerPerson}</p></div>
                     <div>
                         <div className="formbold-btn"><Link to="/">Home</Link></div>
