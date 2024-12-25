@@ -115,8 +115,8 @@ const ContextProvider = ({ children }) => {
     //calculate Gas
     const gasPerMonth = gas*(percentage/100); //total  gas for month
     const gasPerPerson = gasPerMonth/tenantCount;
-    setGasPerPerson(gasPerMonth);
-    setTotalGas(gasPerPerson);
+    setGasPerPerson(gasPerPerson);
+    setTotalGas(gasPerMonth);
 
     //Calculate internet
     const internetPerMonth = internet*(percentage/100); //total  hydro for month
