@@ -39,6 +39,13 @@ const ContextProvider = ({ children }) => {
   const [waterError, setWaterError] = useState(false);
   const [waterMonthError, setWaterMonthError] = useState(false);
 
+  //month name
+  function handleMonthName(monthNumber) {
+    const date = new Date()
+    date.setMonth(monthNumber) // starts with 0, so 0 is January
+    return date.toLocaleString('en-EN', { month: "long" })
+  }
+
   //handle info
   function handleSubmit(e) {
       navigate('/utility-cal/');
@@ -126,24 +133,27 @@ const ContextProvider = ({ children }) => {
 
 
     //calculate water 
+    let ww = 0;
+    let wwp = 0;
     if(lumpSum){
-      const ww = 100;
-      const wwp = ww / tenantCount;
+      ww = 100;
+      wwp = ww / tenantCount;
       setWaterBillMonth(0);
       setWaterPerPerson(wwp);
       setTotalWater(100);
     }else{
       //getTotalBill entered by user
       const totalInputWater = totalWaterBill - (waterBillMonth*100); 
-      const ww = totalInputWater*(percentage/100);
-      const wwp = ww / tenantCount;
+      ww = totalInputWater*(percentage/100);
+      wwp = ww / tenantCount;
       setWaterBillMonth(waterBillMonth);
       setTotalWater(ww);
       setWaterPerPerson(wwp);
     }
     
-    const totalUtilityCal = (totalHydro + totalGas + totalInternet +  totalWater) + 100;
-    const totalUitlityPerPersonCal = (hydroPerPerson + gasPerPerson + internetPerPerson + waterPerPerson) + (100/tenantCount);
+    const totalUtilityCal = (hydroPerMonth + gasPerMonth + internetPerMonth +  ww) + 100;
+
+    const totalUitlityPerPersonCal = (hydroPerPerson + gasPerPerson + internetPerPerson + wwp) + (100/tenantCount);
 
     setTotalUtility(totalUtilityCal);
     setTotalUtilityPerPerson(totalUitlityPerPersonCal);
@@ -152,6 +162,7 @@ const ContextProvider = ({ children }) => {
 
 
   const contextValue = {
+    handleMonthName,
     month, 
     setMonth,
     year,
