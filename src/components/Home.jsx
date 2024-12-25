@@ -49,7 +49,7 @@ const Home = () => {
                     <label htmlFor="month" className="formbold-form-label"> Month </label>
                     <select value={month} onChange={(e)=>setMonth(e.target.value)}className="formbold-form-input">
                     { months.map((monthVal, index)=>{
-                       return <option key={monthVal} value={monthVal}>{monthVal}</option>
+                       return <option key={index} value={index}>{monthVal}</option>
                     })}    
                     </select>
                 </div>
