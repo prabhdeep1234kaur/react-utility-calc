@@ -50,6 +50,15 @@ const Register = () => {
                 required
                 />
             </div>
+            <div className="formbold-mb-5">
+                <label htmlFor="confirmPwd" className="formbold-form-label"> Confirm Password </label>
+                <input
+                type="password"
+                name="confirmPwd"
+                className="formbold-form-input"
+                required
+                />
+            </div>
             {/** Registering as Owner */}
 
             <div className="formbold-mb-5">
