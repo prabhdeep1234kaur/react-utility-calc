@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './components/Home'
 import UtilityCalc from './components/UtilityCalc'
 import UtilityView from './components/UtilityView'
+import Register from './components/Register'
 
 import { ContextProvider } from './context/context';
 import { Route, Routes } from "react-router-dom";
@@ -16,8 +17,10 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/utility-cal/" element={<UtilityCalc />} />
         <Route path="/utility-view/" element={<UtilityView />} />
+
       </Routes>
       
       <Footer />

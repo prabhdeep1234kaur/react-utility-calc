@@ -123,3 +123,8 @@ body {
   color:red;
   font-size: 12px;
 }
+
+.pageHeading {
+  text-align: center;
+  margin: 50px;
+}
